@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paths</title>
+    <link rel='stylesheet' href='style.css'/>
+    <script src='lib.js'></script>
+  </head>
+  <body>
+    <canvas id='theCanvas' width='1000' height='1000'></canvas>
+    <div id='resultList'>
+      <h2 id='P_og'>Placeholder</h2>
+    </div>
+    <h1>Path minimizing thingy</h1>
+    <p>Given a graph, remove edges to minimize the function
+      P = A * W<sub>t</sub> +
+      B * D<sub>avg</sub>, where
+      <ul><li>A = 0.1</li>
+	<li>B = 2.1</li>
+	<li>W<sub>t</sub> = the sum of the length of all edges</li>
+	<li>D<sub>avg</sub> = Average of shortest paths from
+	  each vertex to all other vertexes</li>
+    </ul></p>
+  </body>
+</html>
+<script>
+  window.onload = (ev) => {
+      gm = new GraphMinimizer();
+      init("koodipahkina-data.json", gm, "theCanvas");
+  };
+  </script>
